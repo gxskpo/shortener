@@ -17,12 +17,8 @@ export async function GET(
     return Response.redirect(rows[0].originalurl);
   }
 
-  return Response.json(
-    {
-      message: "Key no encontrada",
-    },
-    {
-      status: 404,
-    },
-  );
+  const urlObject = new URL(request.url);
+  const redirTo = urlObject.origin + "/404"
+  console.log(redirTo)
+  return Response.redirect(redirTo);
 }
