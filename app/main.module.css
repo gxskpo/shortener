@@ -1,0 +1,55 @@
+.urlShortener {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* Color de texto en modo oscuro */
+  padding: 20px; /* Agregamos espaciado interno para separar los elementos del borde */
+}
+
+.crocodilo {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #333; /* Color de fondo más oscuro para el contenedor */
+  border-radius: 5px;
+}
+
+.crocodilo > p {
+  color: white;
+  font-family: system-ui, sans-serif;
+}
+
+.linkCreated {
+  color: #3886d9 ;
+}
+
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.inputField {
+    padding: 8px;
+    border: 1px solid #555; /* Color de borde más oscuro */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+    background-color: #444; /* Color de fondo para el campo de entrada */
+    color: #fff; /* Color de texto para el campo de entrada */
+}
+
+.submitButton {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitButton:disabled {
+    background-color: #555; /* Color más oscuro para el botón deshabilitado */
+    cursor: not-allowed;
+}
