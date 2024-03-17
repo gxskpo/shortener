@@ -1,33 +1,33 @@
 .urlShortener {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff; /* Color de texto en modo oscuro */
-  padding: 20px; /* Agregamos espaciado interno para separar los elementos del borde */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* Color de texto en modo oscuro */
+    padding: 20px; /* Agregamos espaciado interno para separar los elementos del borde */
 }
 
 .crocodilo {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #333; /* Color de fondo más oscuro para el contenedor */
-  border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333; /* Color de fondo más oscuro para el contenedor */
+    border-radius: 5px;
 }
 
 .crocodilo > p {
-  color: white;
-  font-family: system-ui, sans-serif;
+    color: white;
+    font-family: system-ui, sans-serif;
 }
 
 .linkCreated {
-  color: #3886d9 ;
+    color: #3886d9;
 }
 
 
 .formContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .inputField {
@@ -52,4 +52,18 @@
 .submitButton:disabled {
     background-color: #555; /* Color más oscuro para el botón deshabilitado */
     cursor: not-allowed;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Altura deseada para el footer */
+}
+
+.ghIcon{
+    background-color: white;
+    padding: 5px;
+    border-radius: 15px;
 }
