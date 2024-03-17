@@ -34,7 +34,7 @@ export default async function newLink(url: string): Promise<string | null> {
     url = "https://" + url.trim();
   }
 
-  const hash = crc32(url);
+  const hash = crc32(url).toLowerCase();
   const client = await sql.connect();
   const { rows } = await client.sql`SELECT *
                                     FROM urls
