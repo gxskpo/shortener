@@ -1,4 +1,4 @@
-<div style="text-align: center;">
+<center>
 
 # Url shortener
 
@@ -8,7 +8,7 @@ A simple link shortener made with Next.JS using PostgreSQL as database.
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-</div>
+</center>
 
 ## [See it in action!](https://hawrk.co)
 
