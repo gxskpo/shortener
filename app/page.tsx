@@ -1,16 +1,21 @@
 "use client";
 import newLink from "@/components/createUrl";
-import { useState, useEffect } from "react";
+import {useState, useEffect, FormEvent} from "react";
 import styles from "@/app/main.module.css";
+
+
+
 
 export default function Home() {
   const [url, setUrl] = useState<string | null>(null);
   const [inputsDisabled, setInputDisabled] = useState<boolean>(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setInputDisabled(true);
-    const inputText = e.target.elements[0].value; // Obtiene el valor del input
+    const target = e.target as HTMLFormElement
+    const element = target.elements[0] as HTMLInputElement;
+    const inputText = element.value;
     newLink(inputText).then((e) => {
       if (e) {
         setUrl(e);
