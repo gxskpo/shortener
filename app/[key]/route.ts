@@ -1,7 +1,6 @@
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import { sql } from "@vercel/postgres";
-import type { Urls } from "@/types/urls";
+import { kv } from "@vercel/kv";
 
 export const runtime = "edge";
 
@@ -10,10 +9,10 @@ const app = new Hono();
 app.get("/:key", async (c) => {
   const { key } = c.req.param();
 
-  const { rows } = await sql<Urls>`SELECT * FROM urls WHERE key = ${key}`;
+  const url: string | null = await kv.get(key);
 
-  if (rows.length > 0) {
-    return c.redirect(rows[0].originalurl);
+  if (url) {
+    return c.redirect(url)
   }
 
   return c.redirect("/404");

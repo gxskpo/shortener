@@ -1,5 +1,5 @@
 "use server";
-import { sql } from "@vercel/postgres";
+import {kv} from '@vercel/kv';
 
 function crc32(input: string): string {
   const table = new Uint32Array(256);
@@ -35,14 +35,11 @@ export default async function newLink(url: string): Promise<string | null> {
   }
 
   const hash = crc32(url).toLowerCase();
-  const client = await sql.connect();
-  const { rows } = await client.sql`SELECT *
-                                    FROM urls
-                                    WHERE key = ${hash}`;
-  if (rows.length > 0) {
-    return rows[0].key;
+  const link: string | null = await kv.get(hash);
+  if (link) {
+    return link
   }
-  await client.sql`INSERT INTO urls(key, originalUrl)
-                     values (${hash}, ${url})`;
+
+  await kv.set(hash, url);
   return hash;
 }
