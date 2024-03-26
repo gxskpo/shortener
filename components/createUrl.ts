@@ -37,7 +37,7 @@ export default async function newLink(url: string): Promise<string | null> {
   const hash = crc32(url).toLowerCase();
   const link: string | null = await kv.get(hash);
   if (link) {
-    return link
+    return hash;
   }
 
   await kv.set(hash, url);
